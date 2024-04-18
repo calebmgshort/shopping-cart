@@ -26,19 +26,19 @@ const NumberInput = React.forwardRef(function CustomNumberInput(
           children: <AddIcon fontSize="small" />,
           className: 'increment',
         },
+        // input: {...props.slotProps?.input},
         decrementButton: {
           children: <RemoveIcon fontSize="small" />,
         },
       }}
-      // id="quantity"
       {...props}
       ref={ref}
     />
   );
 });
 
-export default function QuantityInput() {
-  return <NumberInput aria-label="Quantity Input" min={1} />;
+export default function QuantityInput(props) {
+  return <NumberInput {...props} />;
 }
 
 const blue = {

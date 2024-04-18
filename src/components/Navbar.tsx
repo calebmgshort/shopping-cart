@@ -6,8 +6,6 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Link } from 'react-router-dom'
 import Box from '@mui/material/Box';
 
-// import { Link } from "react-router-dom";
-
 function Navbar({itemCount=0}) {
 
   return (
@@ -21,7 +19,7 @@ function Navbar({itemCount=0}) {
         </Button>
         <Typography component="div" sx={{ flexGrow: 1 }}></Typography>
         <Box>
-          <Typography textAlign="center" variant="h6" component="div">
+          <Typography textAlign="center" variant="h6" component="div" data-testid="itemCount">
             {itemCount}
           </Typography>
           <ShoppingCartIcon></ShoppingCartIcon>

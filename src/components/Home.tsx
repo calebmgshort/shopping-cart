@@ -27,7 +27,7 @@ function Home() {
             pt: { xs: 14, sm: 20 },
             pb: { xs: 8, sm: 12 },
         }}>
-          <Typography variant="h2" >
+          <Typography data-testid="welcome" variant="h2" >
             Welcome!
           </Typography>
           <Button variant="contained" component={Link} to="/shop">

@@ -3,7 +3,7 @@ import App from "./App";
 import Home from "./components/Home";
 import Shop from "./components/Shop";
 
-const router = createBrowserRouter([
+const routerConfig = [
   {
     path: "/",
     element: <App />,
@@ -12,6 +12,11 @@ const router = createBrowserRouter([
       { path: "shop", element: <Shop /> },
     ],
   },
-]);
+];
 
-export default router
+const router = createBrowserRouter(routerConfig);
+
+export {
+  routerConfig,
+  router
+}
