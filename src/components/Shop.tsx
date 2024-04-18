@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { useOutletContext } from "react-router-dom";
 import Grid from '@mui/material/Unstable_Grid2';
 import Card from "@mui/material/Card";
@@ -7,19 +7,20 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import CardActions from "@mui/material/CardActions";
 import Button from "@mui/material/Button";
-import IntegerInput from "./IntegerInput";
+// import IntegerInput from "./IntegerInput";
 import Input from "@mui/material/Input";
 
 
 function Home() {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [items, setItems] = useState<Record<string, any>[]>([]);
-  const [setItemCount] = useOutletContext();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [setItemCount] = useOutletContext<[any]>();
   
-  const handleSubmit = (event: SubmitEvent) => {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault(); // Prevent default form submission behavior
 
-    const data = new FormData(event.target);
+    const data = new FormData(event.target as HTMLFormElement);
     const formProps = Object.fromEntries(data);
     const quantity = Number(formProps.quantity);
     setItemCount((current: number) => current+quantity);

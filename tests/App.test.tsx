@@ -57,7 +57,8 @@ describe('interactions between children', async () => {
 
     const quantityInput = screen.getByTestId("quantity");
     fireEvent.change(quantityInput, {target: {value: '4'}})
-    expect(quantityInput.value).toBe('4')
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    expect((quantityInput as any).value).toBe('4')
 
     const submitButton = screen.getByRole("button", { name: "Add To Cart" });
 

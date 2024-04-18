@@ -8,6 +8,7 @@ import {
 import { styled } from '@mui/system';
 import RemoveIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
+import { JSX } from 'react/jsx-runtime';
 
 const NumberInput = React.forwardRef(function CustomNumberInput(
   props: NumberInputProps,
@@ -37,7 +38,7 @@ const NumberInput = React.forwardRef(function CustomNumberInput(
   );
 });
 
-export default function QuantityInput(props) {
+export default function QuantityInput(props: JSX.IntrinsicAttributes & Omit<NumberInputProps, "ref"> & React.RefAttributes<HTMLDivElement>) {
   return <NumberInput {...props} />;
 }
 
